@@ -25,7 +25,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter vs985,$(TARGET_DEVICE)),)
+ifneq ($(filter l24 v31,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 # Create a link for the WCNSS config file, which ends up as a writable
