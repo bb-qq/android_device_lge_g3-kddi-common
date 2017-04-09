@@ -18,19 +18,20 @@
 # inherit from common g3
 -include device/lge/g3-common/BoardConfigCommon.mk
 
-TARGET_OTA_ASSERT_DEVICE := g3,vs985
+TARGET_OTA_ASSERT_DEVICE := g3,vs985,d855,l24,v31
 
 # Assertions
-TARGET_BOARD_INFO_FILE ?= device/lge/vs985/board-info.txt
+TARGET_BOARD_INFO_FILE ?= device/lge/g3-kddi-common/board-info.txt
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/vs985/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/g3-kddi-common/bluetooth
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineageos_vs985_defconfig
 TARGET_REQUIRES_BUMP := true
+TARGET_KERNEL_SOURCE := kernel/lge/g3-kddi
+TARGET_KERNEL_CONFIG ?=
 
 # NFC
 BOARD_NFC_CHIPSET := pn547
@@ -44,14 +45,14 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 27325360128
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/lge/vs985/rootdir/etc/fstab.g3
+TARGET_RECOVERY_FSTAB := device/lge/g3-kddi-common/rootdir/etc/fstab.g3
 
 # Releasetools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_g3
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/vs985
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/g3-kddi-common
 
 # RIL
-BOARD_RIL_CLASS += ../../../device/lge/vs985/ril/
+BOARD_RIL_CLASS += ../../../device/lge/g3-kddi-common/ril/
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
@@ -67,4 +68,4 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
--include vendor/lge/vs985/BoardConfigVendor.mk
+-include vendor/lge/g3-kddi-common/BoardConfigVendor.mk

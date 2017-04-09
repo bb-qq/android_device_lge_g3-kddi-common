@@ -17,12 +17,13 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/lge/vs985/vs985-vendor.mk)
+$(call inherit-product-if-exists, vendor/lge/g3-kddi-common/g3-kddi-common-vendor.mk)
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/lge/g3-common/configs/audio/audio_platform_info_qcwcn.xml:system/etc/audio_platform_info.xml \
-    device/lge/g3-common/configs/audio/mixer_paths_qcwcn.xml:system/etc/mixer_paths.xml
+    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/configs/audio/mixer_paths_qcwcn.xml:system/etc/mixer_paths_qcwcn.xml \
+    device/lge/g3-common/configs/audio/audio_platform_info_qcwcn.xml:system/etc/audio_platform_info.xml
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -65,7 +66,8 @@ PRODUCT_COPY_FILES += \
     device/lge/g3-common/wcnss/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     device/lge/g3-common/wcnss/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     device/lge/g3-common/wcnss/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    device/lge/g3-common/wcnss/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+    device/lge/g3-common/wcnss/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/IrDA_Serial.txt:system/etc/IrDA_Serial.txt
 
 # common g3
 $(call inherit-product, device/lge/g3-common/g3.mk)
