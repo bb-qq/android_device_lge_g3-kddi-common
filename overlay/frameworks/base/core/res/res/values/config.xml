@@ -38,6 +38,10 @@
          Empty is viewed as "all".  Only used on devices which
          don't support RIL_REQUEST_GET_RADIO_CAPABILITY
          format is UMTS|LTE|... -->
-    <string translatable="false" name="config_radio_access_family">LTE|CDMA|EVDO</string>
+    <string translatable="false" name="config_radio_access_family">LTE|CDMA|EVDO|GSM|WCDMA</string>
+
+    <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
+         Software implementation will be used if config_hardware_auto_brightness_available is not set -->
+    <bool name="config_automatic_brightness_available">false</bool>
 
 </resources>
